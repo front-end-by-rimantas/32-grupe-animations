@@ -41,6 +41,30 @@ body > * {
 }
 
 @keyframes christmas {
+    0% {
+        background-color: #f00;
+        box-shadow: 0 0 80px 20px #f00;
+    }
+    33% {
+        background-color: #f00;
+        box-shadow: 0 0 80px 20px #f00;
+    }
+    34% {
+        background-color: #0f0;
+        box-shadow: 0 0 80px 20px #0f0;
+    }
+    66% {
+        background-color: #0f0;
+        box-shadow: 0 0 80px 20px #0f0;
+    }
+    67% {
+        background-color: #00f;
+        box-shadow: 0 0 80px 20px #00f;
+    }
+    100% {
+        background-color: #00f;
+        box-shadow: 0 0 80px 20px #00f;
+    }
 }
 
 .battery {
@@ -66,7 +90,20 @@ body > * {
     display: inline-block;
     height: 100%;
     width: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    animation: charging 2s linear 0s infinite;
+    background-color: rgb(7, 138, 7);
 }
 
+@keyframes charging {
+    0% {
+        width: 0%;
+        background-color: rgb(187, 41, 41);
+    }
+    50% {
+        background-color: rgb(247, 243, 44);
+    }
+    100% {
+        width: 100%;
+        background-color: rgb(7, 138, 7);
+    }
+}
