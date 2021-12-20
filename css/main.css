@@ -9,18 +9,63 @@ body * {
 }
 
 body {
-    position: relative;
     height: 100vh;
+    padding: 80px;
+}
+body > * {
+    margin: 80px;
 }
 
 .bulb {
+    display: inline-block;
     width: 220px;
     height: 400px;
     background-image: url(../img/bulb.png);
     background-size: contain;
     background-repeat: no-repeat;
+    position: relative;
+}
+
+.bulb > .light {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 95%;
+    aspect-ratio: 1/1;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 80px #f00;
+
+    animation: christmas 3s linear 0s infinite;
+}
+
+@keyframes christmas {
+}
+
+.battery {
+    display: inline-block;
+    width: 400px;
+    height: 180px;
+    border: 20px solid #333;
+    border-radius: 10px;
+    position: relative;
+}
+.battery::after {
+    content: '';
+    width: 20px;
+    height: 60px;
     position: absolute;
     top: 50%;
+    right: 0;
+    transform: translate(200%, -50%);
+    background-color: #333;
+}
+.battery::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
